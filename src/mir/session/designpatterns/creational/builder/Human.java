@@ -5,23 +5,49 @@ public class Human {
     private String name;
     private String surname;
 
-    public Human(int age, String name, String surname) {
-        this.age = age;
-        this.name = name;
-        this.surname = surname;
+    private Human(Builder builder) {
+        this.age = builder.age;
+        this.name = builder.name;
+        this.surname = builder.surname;
     }
 
-    public Human(int age, String name) {
-        this(age, name, "Default Surname");
+    public void printName() {
+        System.out.println(this.name.substring(2));
     }
 
-    public Human(int age) {
-        this(age, "Default name", "Default Surname");
+    public static class Builder {
+
+        private int age;
+        private String name;
+        private String surname;
+
+        public Builder() {
+            this.age = 10;
+            this.surname = "Default Surname";
+        }
+
+        public Builder age(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder surname(String surname) {
+            this.surname = surname;
+            return this;
+        }
+
+        public Human build() {
+            Human human = new Human(this);
+            return human;
+        }
     }
 
-    public Human(String name) {
-        this(10, name, "Default Surname");
-    }
+
 
     @Override
     public String toString() {

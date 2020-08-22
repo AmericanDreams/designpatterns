@@ -14,23 +14,12 @@ public class Main {
          * hell ede bilek
          * */
 
-        List<Wheel> wheels = new ArrayList<>();
-        wheels.add(new Wheel());
-        wheels.add(new Wheel());
-        wheels.add(new Wheel());
-        wheels.add(new Wheel());
+        CarFactory carFactory = new CarFactoryImpl2();
 
-        Car car1 = new Car(wheels);
+        Car car1 = Car.getInstance();
         System.out.println(car1);
 
-
-        List<Wheel> wheels2 = new ArrayList<>();
-        wheels2.add(new Wheel());
-        wheels2.add(new Wheel());
-        wheels2.add(new Wheel());
-        wheels2.add(new Wheel());
-
-        Car car2 = new Car(wheels2);
+        Car car2 = carFactory.createInstance();;
         System.out.println(car2);
 
     }
