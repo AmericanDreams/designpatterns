@@ -1,8 +1,8 @@
 package mir.session.designpatterns.structural.bridge.os;
 
-import mir.session.designpatterns.structural.bridge.BorderPainter;
-import mir.session.designpatterns.structural.bridge.os.linux.LinuxBoldStyleBorderPainter;
-import mir.session.designpatterns.structural.bridge.os.windows.WindowsBoldStyleBorderPainter;
+
+import mir.session.designpatterns.structural.bridge.os.styles.BoldStyle;
+import mir.session.designpatterns.structural.bridge.os.windows.WindowsBorderPainter;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,10 +15,8 @@ public class Main {
          * yaratmali olacaqimiz class saylari artaracaq. Bune optimal bir hell tapmaq lazimdir.
          * */
 
-        BorderPainter windowsBold = new WindowsBoldStyleBorderPainter();
-        windowsBold.paint();
+        WindowsBorderPainter windowsBorderPainter = new WindowsBorderPainter(new BoldStyle());
+        windowsBorderPainter.paint();
 
-        BorderPainter linuxBold = new LinuxBoldStyleBorderPainter();
-        linuxBold.paint();
     }
 }

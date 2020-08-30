@@ -9,7 +9,10 @@ public class Main {
          * controlerSwitch methodunun signature sini deyishdirmeden oraya
          * Engine interface sinin instancenini gondere bilmeliyik
          * */
-        //controlSwitch(engine);
+
+        EngineAdapter engineAdapter = new EngineAdapter(engine);
+
+        controlSwitch(engineAdapter);
     }
 
     public static void controlSwitch(Switch s) {
