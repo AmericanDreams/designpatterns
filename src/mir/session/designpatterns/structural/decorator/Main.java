@@ -8,12 +8,10 @@ public class Main {
          * Funksionlliqlari extend etmek subclassingden ferqli alternativ hell teklif etmek lazimdir.
          * */
 
-        Alarm simpleAlarm = new SimpleAlarm();
-        Alarm jumpingAndScreamingAlarm = new JumpingAndScreamingAlarm();
-        Alarm jumpingAlarm = new JumpingAlarm();
+        JumpingAlarmDecorator jumpingAlarmDecorator = new JumpingAlarmDecorator(new ScreamingAlarm());
+        jumpingAlarmDecorator.makeSound();
 
-        simpleAlarm.makeSound();
-        jumpingAndScreamingAlarm.makeSound();
-        jumpingAlarm.makeSound();
+        JumpingAlarmDecorator jumpingSimpleAlaram = new JumpingAlarmDecorator(new SimpleAlarm());
+        jumpingSimpleAlaram.makeSound();
     }
 }

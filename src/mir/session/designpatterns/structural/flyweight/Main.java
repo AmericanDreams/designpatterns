@@ -13,10 +13,10 @@ public class Main {
          * ferqli olur.
          * */
 
-        Letter A = new Letter('A', 12, 44);
-        Letter B = new Letter('B', 12, 3);
-        Letter A2 = new Letter('A', 182, 454);
-        Letter A3 = new Letter('A', 712, 44);
+        Letter A = LetterFactory.createLetter('A',12,345);
+        Letter B = LetterFactory.createLetter('B', 12, 3);
+        Letter A2 = LetterFactory.createLetter('A', 182, 454);
+        Letter A3 = LetterFactory.createLetter('A', 712, 44);
 
         System.out.println(A);
         System.out.println(B);

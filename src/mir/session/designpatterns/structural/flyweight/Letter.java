@@ -6,6 +6,7 @@ public class Letter {
     private int y;
 
     public Letter(char character, int x, int y) {
+        System.out.println("Created");
         this.character = character;
         this.x = x;
         this.y = y;

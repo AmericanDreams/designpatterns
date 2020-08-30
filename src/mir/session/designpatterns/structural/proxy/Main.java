@@ -10,7 +10,7 @@ public class Main {
          * zaman olmasi ucun class in icerisine hemin loglama kodunu elave ede bilmerik
          * */
 
-        Service service = new ServiceImpl();
+        Service service = new ServiceProxy(new ServiceImpl());
         useService(service);
     }
 

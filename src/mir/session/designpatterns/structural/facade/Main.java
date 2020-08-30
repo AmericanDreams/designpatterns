@@ -14,15 +14,11 @@ public class Main {
          * xeberdar olmadan bu funksionalliqi istifade ede bilsin
          * */
 
-        //turn on the light
-        generator.start();
-        light.turnOn();
+        LightFacade lightFacade = new LightFacadeImpl(generator, light);
+        useLight(lightFacade);
+    }
 
-
-        //turn of the light
-        light.turnOff();
-        generator.stop();
-
-
+    public static void useLight(LightFacade lightFacade) {
+        lightFacade.lightTurnOn();
     }
 }
