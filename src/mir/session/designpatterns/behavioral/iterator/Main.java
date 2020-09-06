@@ -1,5 +1,7 @@
 package mir.session.designpatterns.behavioral.iterator;
 
+import java.util.Iterator;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,8 +17,9 @@ public class Main {
         history.addName("Tural");
         history.addName("Orxan");
 
-        for (String name : history.getNamesMap().values()) {
-            System.out.println(name);
+        Iterator<String> iterator = history.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
     }
 }

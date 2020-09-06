@@ -10,9 +10,11 @@ public class Main {
          * Remote controlun eslinde button press olunduqda gorduyu ishden xebersiz olmalididr.
          * */
 
-        RemoteControl remoteControl = new RemoteControl(new Tv());
+        Command tvTurnOnCommand = new TvTurnOnCommand(new Tv());
+
+        RemoteControl remoteControl = new RemoteControl(tvTurnOnCommand);
         remoteControl.pressButton();
 
-        remoteControl.printLast3Commands();
+        //remoteControl.printLast3Commands();
     }
 }

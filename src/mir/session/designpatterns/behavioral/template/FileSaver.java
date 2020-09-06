@@ -1,6 +1,12 @@
 package mir.session.designpatterns.behavioral.template;
 
 public abstract class FileSaver {
-    public abstract void compress();
-    public abstract void save();
+    protected abstract void compress();
+    protected abstract void writeToDataBase();
+
+    public void save() {
+        compress();
+        writeToDataBase();
+    }
+
 }

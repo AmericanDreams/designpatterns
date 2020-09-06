@@ -2,20 +2,21 @@ package mir.session.designpatterns.behavioral.comand;
 
 public class RemoteControl {
 
-    private Tv tv;
+    private Command command;
 
-    public RemoteControl(Tv tv) {
-        this.tv= tv;
+    public RemoteControl(Command command) {
+        this.command = command;
     }
 
     public void pressButton() {
-
-        tv.turnOn();
+        getCommand().doSomeThing();
     }
 
-
-    public void printLast3Commands() {
-        //Implement...
+    public Command getCommand() {
+        return command;
     }
 
+    public void setCommand(Command command) {
+        this.command = command;
+    }
 }

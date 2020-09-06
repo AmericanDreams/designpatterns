@@ -15,13 +15,10 @@ public class Main {
          *
          * */
 
-        TaskHandler taskHandler = new TaskHandler(new Task1());
-        taskHandler.handleTask();
+        TaskHandler taskHandler = new TaskHandler();
 
-        taskHandler.setTask(new Task2());
         taskHandler.handleTask();
-
-        taskHandler.setTask(new Task1());
+        taskHandler.handleTask();
         taskHandler.handleTask();
 
     }

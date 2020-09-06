@@ -1,5 +1,7 @@
 package mir.session.designpatterns.behavioral.observer;
 
-public abstract class Channel {
+import java.beans.PropertyChangeListener;
+
+public abstract class Channel implements PropertyChangeListener {
     public abstract void notifyMe();
 }

@@ -2,16 +2,13 @@ package mir.session.designpatterns.behavioral.mediator;
 
 public class Employee {
 
-    private Boss boss;
-    private Manager manager;
+    private VacationMediator vacationMediator;
 
-    public Employee(Boss boss, Manager manager) {
-        this.boss = boss;
-        this.manager = manager;
+    public Employee(VacationMediator vacationMediator) {
+        this.vacationMediator = vacationMediator;
     }
 
     public void leaveForVacation() {
-        boss.notifyMe();
-        manager.textMe();
+        vacationMediator.notifyPeople();
     }
 }

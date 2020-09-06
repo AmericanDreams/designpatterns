@@ -10,6 +10,9 @@ public class Main {
          * */
 
         NewsAgent agent = new NewsAgent();
+        agent.addChannel(new AzTV());
+        agent.addChannel(new LiderTV());
+
         agent.insertNews("News");
     }
 }

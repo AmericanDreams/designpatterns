@@ -7,7 +7,7 @@ public class Main {
          * Hansin taskin run olunacaqina runtime da qerar verilmesini temin etmek lazimdir.
          * */
 
-        Task task = new Task1();
-        task.doSomething();
+        TaskRunner taskRunner = new TaskRunner(new Task1());
+        taskRunner.handleTask();
     }
 }

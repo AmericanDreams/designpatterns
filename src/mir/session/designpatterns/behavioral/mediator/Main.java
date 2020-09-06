@@ -8,7 +8,10 @@ public class Main {
          * kocururek Employee nin vacationu cixan zaman kimleri hansi shekilde notify etmesini bilmeli olmasindan
          * azad etmish olariq.
          * */
-        Employee employee = new Employee(new Boss(), new Manager());
+
+        VacationMediator vacationMediator = new EmployeeVacationMediator(new Boss(), new Manager());
+
+        Employee employee = new Employee(vacationMediator);
         employee.leaveForVacation();
     }
 }

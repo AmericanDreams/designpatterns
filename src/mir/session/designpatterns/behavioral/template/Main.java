@@ -13,7 +13,6 @@ public class Main {
 
         FileSaver fileSaver = new WindowsFileSaver();
 
-        fileSaver.compress();
         fileSaver.save();
     }
 }

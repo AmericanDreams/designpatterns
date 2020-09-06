@@ -7,7 +7,7 @@ public class WindowsFileSaver extends FileSaver{
     }
 
     @Override
-    public void save() {
+    public void writeToDataBase() {
         System.out.println("Windows is saving");
     }
 }

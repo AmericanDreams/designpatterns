@@ -1,9 +1,10 @@
 package mir.session.designpatterns.behavioral.memento;
 
 public class Editor {
+
     private String text;
 
-    private String savedText;
+    private EditorSaver editorSaver = new EditorSaverImpl();
 
     public void write(String text) {
         this.text = text;
@@ -14,10 +15,11 @@ public class Editor {
     }
 
     public void save() {
-        savedText = text;
+        editorSaver.save(new EditorState(this.text));
     }
 
     public void restore() {
-        text = savedText;
+        EditorState restore = editorSaver.restore();
+        text = restore.getText();
     }
 }

@@ -6,11 +6,21 @@ import mir.session.designpatterns.behavioral.chainofresponsibility.filter.Filter
 
 public class WebServer {
 
-    public void handLeRequest(String request) {
-        Filter autenticationFilter = new AutenticationFilter();
-        autenticationFilter.handle(request);
+    private Filter filter;
 
-        Filter filter = new CompressingFilter();
-        filter.handle(request);
+    public WebServer(Filter filter) {
+        this.filter = filter;
+    }
+
+    public void handLeRequest(String request) {
+        getFilter().handle(request);
+    }
+
+    public Filter getFilter() {
+        return filter;
+    }
+
+    public void setFilter(Filter filter) {
+        this.filter = filter;
     }
 }

@@ -7,7 +7,7 @@ public class LinuxFileSaver extends FileSaver {
     }
 
     @Override
-    public void save() {
+    public void writeToDataBase() {
         System.out.println("Linux is saving");
     }
 }
