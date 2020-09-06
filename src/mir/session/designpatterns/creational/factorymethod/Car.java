@@ -13,6 +13,17 @@ public class Car {
                 '}';
     }
 
+    public static Car getInstance() {
+        List<Wheel> wheels = new ArrayList<>();
+        wheels.add(new Wheel());
+        wheels.add(new Wheel());
+        wheels.add(new Wheel());
+        wheels.add(new Wheel());
+
+        Car car1 = new Car(wheels);
+        return car1;
+    }
+
     public List<Wheel> getWheels() {
         return wheels;
     }

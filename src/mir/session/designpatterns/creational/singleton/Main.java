@@ -18,6 +18,6 @@ public class Main {
     }
 
     public static SingletonObject getInstanceOfSingletonObject() {
-        return new SingletonObject();
+        return SingletonObject.getInstance();
     }
 }

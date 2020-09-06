@@ -2,11 +2,11 @@ package mir.session.designpatterns.creational.prototype;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         createForest();
     }
 
-    private static void createForest() {
+    private static void createForest() throws CloneNotSupportedException {
         System.out.println("Forest rendering...");
 
         /**
@@ -15,8 +15,13 @@ public class Main {
          * Ve bu sayede , cox az xercle cox sayda tree insance si yarada bilek
          * */
         Tree tree1 = new Tree();
-        Tree tree2 = new Tree();
-        Tree tree3 = new Tree();
+
+        Tree tree2 = tree1.clone();
+        tree1.getLeafs().add("leafs4");
+
+        Tree tree3 = tree1.clone();
+
+
 
         System.out.println(tree1.toString());
         System.out.println(tree2.toString());
